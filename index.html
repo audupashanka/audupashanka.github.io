@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>gdauth documentation</title>
+  <title>Welcome to gdauth’s documentation! &mdash; gdauth  documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -17,7 +17,8 @@
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="CLI Help" href="cli.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -27,11 +28,19 @@
         <div class="wy-side-nav-search" >
             <a href="#" class="icon icon-home"> gdauth
           </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="index.html#document-gdauth">gdauth.api module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html#document-cli">CLI Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">CLI Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gdauth.html">gdauth language parser module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="driveapi.html">gdauth drive module</a></li>
 </ul>
 
         </div>
@@ -48,8 +57,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="#" class="icon icon-home"></a> &raquo;</li>
-      <li>gdauth  documentation</li>
+      <li>Welcome to gdauth’s documentation!</li>
       <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -60,145 +70,17 @@
   <section id="welcome-to-gdauth-s-documentation">
 <h1>Welcome to gdauth’s documentation!<a class="headerlink" href="#welcome-to-gdauth-s-documentation" title="Permalink to this headline"></a></h1>
 <div class="toctree-wrapper compound">
-<span id="document-gdauth"></span><section id="module-gdauth.api">
-<span id="gdauth-api-module"></span><h2>gdauth.api module<a class="headerlink" href="#module-gdauth.api" title="Permalink to this headline"></a></h2>
-<dl class="py function">
-<dt class="sig sig-object py" id="gdauth.api.create_permission">
-<span class="sig-prename descclassname"><span class="pre">gdauth.api.</span></span><span class="sig-name descname"><span class="pre">create_permission</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">role</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdauth.api.create_permission" title="Permalink to this definition"></a></dt>
-<dd><p>This function will grant permission to a file/folder based on the type of role and the type of users provided.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>fid</strong> (<em>str</em>) – file/folder id.</p></li>
-<li><p><strong>role</strong> (<em>str</em>) – type of permissions (reader/writer/commenter).</p></li>
-<li><p><strong>user</strong> (<em>list</em>) – can be instance of user(individual user email), group(group of email ids).</p></li>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">CLI Help</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#Named Arguments">Named Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#sub-commands">sub-commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#Sub-commands:">Sub-commands:</a></li>
 </ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="gdauth.api.list_files">
-<span class="sig-prename descclassname"><span class="pre">gdauth.api.</span></span><span class="sig-name descname"><span class="pre">list_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdauth.api.list_files" title="Permalink to this definition"></a></dt>
-<dd><p>This function will list files/folder based on the user signed in.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>fid</strong> (<em>str</em>) – file/folder id when given will list the sub files and folders, if None then list the files/folders under the root directory</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>list</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="gdauth.api.list_permission">
-<span class="sig-prename descclassname"><span class="pre">gdauth.api.</span></span><span class="sig-name descname"><span class="pre">list_permission</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fid</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdauth.api.list_permission" title="Permalink to this definition"></a></dt>
-<dd><p>This function will return list of permissions to a file/folder based on the id.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>fid</strong> (<em>str</em>) – file/folder id</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>list</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="gdauth.api.update_permission">
-<span class="sig-prename descclassname"><span class="pre">gdauth.api.</span></span><span class="sig-name descname"><span class="pre">update_permission</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">permission</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdauth.api.update_permission" title="Permalink to this definition"></a></dt>
-<dd><p>This function will update existing permissions to a file/folder.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>fid</strong> (<em>str</em>) – file/folder id</p></li>
-<li><p><strong>permission</strong> (<em>dict</em>) – <p>The type of permission already set. Ex.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;user&#39;</span><span class="p">,</span>
-<span class="s1">&#39;role&#39;</span><span class="p">:</span> <span class="s1">&#39;writer&#39;</span><span class="p">,</span>
-<span class="s1">&#39;emailAddress&#39;</span><span class="p">:</span> <span class="s1">&#39;user@example.com&#39;</span>
-<span class="p">}</span>
-<span class="o">...</span>
-</pre></div>
-</div>
-</p></li>
-<li><p><strong>chg</strong> (<em>dict</em>) – type of change required(add user, change role, change type)</p></li>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gdauth.html">gdauth language parser module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="driveapi.html">gdauth drive module</a></li>
 </ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>None</p>
-</dd>
-</dl>
-</dd></dl>
-
-</section>
-<span id="document-cli"></span><section id="cli-help">
-<h2>CLI Help<a class="headerlink" href="#cli-help" title="Permalink to this headline"></a></h2>
-<p><p>CLI Tool for gdauth</p>
-</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">gdauth</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">version</span><span class="p">]</span> <span class="p">{</span><span class="n">deploy</span><span class="p">,</span><span class="n">fetch</span><span class="p">}</span> <span class="o">...</span>
-</pre></div>
-</div>
-<section id="Named Arguments">
-<h3>Named Arguments<a class="headerlink" href="#Named Arguments" title="Permalink to this headline"></a></h3>
-<dl class="option-list">
-<dt><kbd>--version</kbd></dt>
-<dd><p>Installed version of gdauth</p>
-</dd>
-</dl>
-</section>
-<section id="Sub-commands:">
-<h3>Sub-commands:<a class="headerlink" href="#Sub-commands:" title="Permalink to this headline"></a></h3>
-<section id="deploy">
-<h4>deploy<a class="headerlink" href="#deploy" title="Permalink to this headline"></a></h4>
-<p>Uploads the files and deploy the permission</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gdauth</span> <span class="n">deploy</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">folder</span> <span class="n">FOLDER</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">recursive</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">file</span> <span class="n">FILE_LOC</span> <span class="n">FILE_DRIVE</span><span class="p">]</span>
-</pre></div>
-</div>
-<section id="Named Arguments_repeat1">
-<h5>Named Arguments<a class="headerlink" href="#Named Arguments_repeat1" title="Permalink to this headline"></a></h5>
-<dl class="option-list">
-<dt><kbd>--folder</kbd></dt>
-<dd><p>Directory with similar file structure as GDrive with permission files, assumes filename as .gdauth</p>
-</dd>
-<dt><kbd>--recursive</kbd></dt>
-<dd><p>Recursively set permissions for the folder and its sub folders, to be used with –folder</p>
-<p>Default: False</p>
-</dd>
-<dt><kbd>--file</kbd></dt>
-<dd><p>Local file path followed by path in GDrive</p>
-</dd>
-</dl>
-</section>
-</section>
-<section id="fetch">
-<h4>fetch<a class="headerlink" href="#fetch" title="Permalink to this headline"></a></h4>
-<p>Get the permissions files</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gdauth</span> <span class="n">fetch</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">folder</span> <span class="n">FOLDER</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">recursive</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">file</span> <span class="n">FILE_DRIVE</span> <span class="n">FILE_LOC</span><span class="p">]</span>
-</pre></div>
-</div>
-<section id="Named Arguments_repeat2">
-<h5>Named Arguments<a class="headerlink" href="#Named Arguments_repeat2" title="Permalink to this headline"></a></h5>
-<dl class="option-list">
-<dt><kbd>--folder</kbd></dt>
-<dd><p>Folder with similar directory structure as GDrive to get all permission files, assumes filename as .gdauth</p>
-</dd>
-<dt><kbd>--recursive</kbd></dt>
-<dd><p>Recursively get permissions file for the folder and its sub folders</p>
-<p>Default: False</p>
-</dd>
-<dt><kbd>--file</kbd></dt>
-<dd><p>Path of file in drive followed by the local path to fetch to</p>
-</dd>
-</dl>
-</section>
-</section>
-</section>
-</section>
 </div>
 </section>
 <section id="indices-and-tables">
@@ -213,7 +95,9 @@
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="cli.html" class="btn btn-neutral float-right" title="CLI Help" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 
