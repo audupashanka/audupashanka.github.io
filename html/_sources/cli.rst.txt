@@ -1,0 +1,6 @@
+CLI Help
+----------------------
+
+.. argparse::
+    :module: gdauth.cli
+    :func: get_parser

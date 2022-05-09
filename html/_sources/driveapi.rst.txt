@@ -1,0 +1,6 @@
+gdauth drive module
+----------------------
+
+.. automodule:: gdauth.driveapi.drive
+    :members:
+    :show-inheritance:

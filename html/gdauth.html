@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>gdauth language parser module &mdash; gdauth  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="gdauth drive module" href="driveapi.html" />
+    <link rel="prev" title="CLI Help" href="cli.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> gdauth
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="cli.html">CLI Help</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">gdauth language parser module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="driveapi.html">gdauth drive module</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">gdauth</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>gdauth language parser module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/gdauth.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-gdauth.lang.gdauth_parse">
+<span id="gdauth-language-parser-module"></span><h1>gdauth language parser module<a class="headerlink" href="#module-gdauth.lang.gdauth_parse" title="Permalink to this headline"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="gdauth.lang.gdauth_parse.Action">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdauth.lang.gdauth_parse.Action" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#gdauth.lang.gdauth_parse.Node" title="gdauth.lang.gdauth_parse.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">gdauth.lang.gdauth_parse.Node</span></code></a></p>
+<p>Class of nodes that represents an action statement
+Possible actions are apply, only and revoke</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gdauth.lang.gdauth_parse.Aggregate">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Aggregate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdauth.lang.gdauth_parse.Aggregate" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#gdauth.lang.gdauth_parse.Node" title="gdauth.lang.gdauth_parse.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">gdauth.lang.gdauth_parse.Node</span></code></a></p>
+<p>Class of nodes used to aggregate the two types of variables</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gdauth.lang.gdauth_parse.Assign">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdauth.lang.gdauth_parse.Assign" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#gdauth.lang.gdauth_parse.Node" title="gdauth.lang.gdauth_parse.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">gdauth.lang.gdauth_parse.Node</span></code></a></p>
+<p>Class of nodes for assign statements</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gdauth.lang.gdauth_parse.Email">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Email</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdauth.lang.gdauth_parse.Email" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#gdauth.lang.gdauth_parse.Node" title="gdauth.lang.gdauth_parse.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">gdauth.lang.gdauth_parse.Node</span></code></a></p>
+<p>Class of nodes representing Email ids.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="gdauth.lang.gdauth_parse.EvalError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">EvalError</span></span><a class="headerlink" href="#gdauth.lang.gdauth_parse.EvalError" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Class of exceptions raised when an error occurs during evaluation.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gdauth.lang.gdauth_parse.File">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">File</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdauth.lang.gdauth_parse.File" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#gdauth.lang.gdauth_parse.Node" title="gdauth.lang.gdauth_parse.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">gdauth.lang.gdauth_parse.Node</span></code></a></p>
+<p>Class of nodes representing File strings.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gdauth.lang.gdauth_parse.Include">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Include</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdauth.lang.gdauth_parse.Include" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#gdauth.lang.gdauth_parse.Node" title="gdauth.lang.gdauth_parse.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">gdauth.lang.gdauth_parse.Node</span></code></a></p>
+<p>Class of nodes representing an include statement.
+Invoking the include will create a new context in which
+the included file is executed</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gdauth.lang.gdauth_parse.Node">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Node</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdauth.lang.gdauth_parse.Node" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Base class of AST nodes.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gdauth.lang.gdauth_parse.Statements">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Statements</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdauth.lang.gdauth_parse.Statements" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#gdauth.lang.gdauth_parse.Node" title="gdauth.lang.gdauth_parse.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">gdauth.lang.gdauth_parse.Node</span></code></a></p>
+<p>Class of nodes representing statements</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gdauth.lang.gdauth_parse.StoreVal">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">StoreVal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdauth.lang.gdauth_parse.StoreVal" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class that represents a entry in the store.
+Stored values have an evaluated value(val) and type</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gdauth.lang.gdauth_parse.Var">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Var</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdauth.lang.gdauth_parse.Var" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#gdauth.lang.gdauth_parse.Node" title="gdauth.lang.gdauth_parse.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">gdauth.lang.gdauth_parse.Node</span></code></a></p>
+<p>Class of nodes representing variable.
+They can be of type, directories or files</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gdauth.lang.gdauth_parse.parse">
+<span class="sig-name descname"><span class="pre">parse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdauth.lang.gdauth_parse.parse" title="Permalink to this definition"></a></dt>
+<dd><p>Main function to parse the given code</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>code</strong> (<em>str</em>) – Code to be parsed</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>An instance of tpg.Parser with the parsed code.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="cli.html" class="btn btn-neutral float-left" title="CLI Help" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="driveapi.html" class="btn btn-neutral float-right" title="gdauth drive module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Amogha&amp;Tino.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

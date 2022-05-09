@@ -1,0 +1,7 @@
+gdauth language parser module
+-----------------------------
+
+.. automodule:: gdauth.lang.gdauth_parse
+    :exclude-members: Parser
+    :members:
+    :show-inheritance:
