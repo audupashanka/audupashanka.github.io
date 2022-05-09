@@ -1,4 +1,4 @@
-gdauth drive module
+Drive API module
 ----------------------
 
 .. automodule:: gdauth.driveapi.drive

@@ -1,0 +1,101 @@
+Language Guide
+=====================
+
+This documentation page explains various contructs of the language with examples
+
+Consider a folder on google drive with structure as follows
+::
+
+    .
+    └── CSE_class_ABC
+        ├── HW1
+        ├── HW2
+        ├── Project
+        │   ├── Team1
+        │   ├── Team2
+        │   ├── Team3
+        │   └── auth.gd
+        └── auth.gd
+
+Here, we have a folder ``CSE_class_ABC`` with an authentication file ``auth.gd``. We will use this example to learn more about the language.
+
+.. code-block:: ruby
+   :linenos:
+
+    include "Project/auth.gd"
+
+    tas = ta1@cs.stonybrook.edu, ta2@cs.stonybrook.edu
+
+    student_group1 = student1@cs.stonybrook.edu, student2@cs.stonybrook.edu
+    student_group2 = student_group1, student3@cs.stonybrook.edu
+
+    coursedocs = "HW1", "HW2", "Project"
+
+    apply writer coursedocs tas
+    only commenter "Docs/" tas
+
+    apply reader "HW1/Questions" student_group1
+    apply reader "HW1/Solutions" students_group2
+
+    revoke "Docs/Grades" tas
+
+
+Data Types
+##########
+There are 2 kinds of data types in gdauth, one for representing ``paths`` and another for representing ``email-ids``. ``paths`` can either be file path or folder paths. They are enclosed by double quotes. All paths in a file are relative to the current directory of the file
+
+Include statements
+##################
+*Syntax* : ``include "<filepath>"``
+
+*Overview* : ``include`` keyword is used to indicate that a file must first be executed. The included files are considered to be present on the google drive relative to the path of current file. To prevent users with access to subfolders set permissions to files in the parent folder, the files are executed in a different environment. So every file can only add/remove permissions for files/folders in the current directory or its children.
+
+*Example* : We see in line 1, that we are including ``"Project/auth.gd"``. This indicates that the file mentioned is first loaded and executed before the continuation of the program.
+
+Assignment statements
+#####################
+*Syntax* : 
+
+``<var> = <var(path)>|<path> {, <var(path)>|<path>}*``
+
+``<var> = <var(email-id)>|<email-id> {, <var(email-id)>|<email-id>}*``
+
+*Overview* : An assignment statement is used to create a new variable of existing variables or primitive types. One or more primitives can be aggregated using commas. Note that aggregation of variables is possible on same variable types. A path cannot be aggregated with an email and this will throw an error.
+
+*Example* : We see in line 3-6, there are assignments of types ``paths`` and ``email-ids``. Two or more emails are gathered as groups. In line 4, we see that a variable can be combined with primitive type to create a new variable
+
+Action statements
+#################
+There are three action statements, which starts with keywords ``apply``, ``only`` and ``revoke``. The overview of each of them are below. ``apply`` and ``revoke`` both requires a ``role`` specified with it, which can be on of the following
+
+#. ``owner`` : Owns the file and is billed for the storage
+#. ``writer`` : Can write to file/folder
+#. ``commenter`` : Can comment on the file/folder
+#. ``reader`` : Can read the contents of the file
+
+apply
+*****
+
+*Syntax* : ``apply <role> <var(path)>|<path> <var(email-id)>|<email-id>``
+
+*Overview* : This action makes sure that the role specified is given to the ``paths`` to the user/s in ``email-id``. Note that variables can be aggregates
+
+*Example* : In line 10 of the example, we see that ``tas`` get writer access to the ``coursedocs``
+
+only
+****
+
+*Syntax* : ``only  <role> <var(path)>|<path> <var(email-id)>|<email-id>``
+
+*Overview* : This action makes sure that only user/s of email-id  has the the role specified for the path. All the other user/s with the role are removed.
+
+*Example* : In line 11, we see that only ``tas`` can be commenters, any other commenters are removed.
+
+revoke
+******
+
+*Syntax* : ``revoke <var(path)>|<path> <var(email-id)>|<email-id>``
+
+*Overview* : This action removes the user/s from the path and they will have no access.
+
+*Example* : Last line in the example removes tas from the path "Docs/Grades"

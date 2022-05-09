@@ -1,4 +1,4 @@
-gdauth language parser module
+Language Parser module
 -----------------------------
 
 .. automodule:: gdauth.lang.gdauth_parse

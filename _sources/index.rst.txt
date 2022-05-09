@@ -5,11 +5,17 @@
 
 Welcome to gdauth's documentation!
 ==================================
+**Access control for Google Drive: Policy language, analysis, and enforcement**
+
+Welcome to the documentation pages of gdauth
+
+Follow the contents below for more details about the tool
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
+   lang_guide.rst
    cli.rst
    gdauth.rst
    driveapi.rst

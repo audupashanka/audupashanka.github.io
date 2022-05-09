@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Language Guide &mdash; gdauth  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="CLI Help" href="cli.html" />
+    <link rel="prev" title="Welcome to gdauth’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> gdauth
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Language Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#data-types">Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#include-statements">Include statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#assignment-statements">Assignment statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#action-statements">Action statements</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#apply">apply</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#only">only</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#revoke">revoke</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">CLI Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gdauth.html">Language Parser module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="driveapi.html">Drive API module</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">gdauth</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Language Guide</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/lang_guide.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="language-guide">
+<h1>Language Guide<a class="headerlink" href="#language-guide" title="Permalink to this headline"></a></h1>
+<p>This documentation page explains various contructs of the language with examples</p>
+<p>Consider a folder on google drive with structure as follows</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>.
+└── CSE_class_ABC
+    ├── HW1
+    ├── HW2
+    ├── Project
+    │   ├── Team1
+    │   ├── Team2
+    │   ├── Team3
+    │   └── auth.gd
+    └── auth.gd
+</pre></div>
+</div>
+<p>Here, we have a folder <code class="docutils literal notranslate"><span class="pre">CSE_class_ABC</span></code> with an authentication file <code class="docutils literal notranslate"><span class="pre">auth.gd</span></code>. We will use this example to learn more about the language.</p>
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span> <span class="kp">include</span> <span class="s2">&quot;Project/auth.gd&quot;</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span> <span class="n">tas</span> <span class="o">=</span> <span class="n">ta1</span><span class="vi">@cs</span><span class="o">.</span><span class="n">stonybrook</span><span class="o">.</span><span class="n">edu</span><span class="p">,</span> <span class="n">ta2</span><span class="vi">@cs</span><span class="o">.</span><span class="n">stonybrook</span><span class="o">.</span><span class="n">edu</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span> <span class="n">student_group1</span> <span class="o">=</span> <span class="n">student1</span><span class="vi">@cs</span><span class="o">.</span><span class="n">stonybrook</span><span class="o">.</span><span class="n">edu</span><span class="p">,</span> <span class="n">student2</span><span class="vi">@cs</span><span class="o">.</span><span class="n">stonybrook</span><span class="o">.</span><span class="n">edu</span>
+<span class="linenos"> 6</span> <span class="n">student_group2</span> <span class="o">=</span> <span class="n">student_group1</span><span class="p">,</span> <span class="n">student3</span><span class="vi">@cs</span><span class="o">.</span><span class="n">stonybrook</span><span class="o">.</span><span class="n">edu</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span> <span class="n">coursedocs</span> <span class="o">=</span> <span class="s2">&quot;HW1&quot;</span><span class="p">,</span> <span class="s2">&quot;HW2&quot;</span><span class="p">,</span> <span class="s2">&quot;Project&quot;</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span> <span class="n">apply</span> <span class="n">writer</span> <span class="n">coursedocs</span> <span class="n">tas</span>
+<span class="linenos">11</span> <span class="n">only</span> <span class="n">commenter</span> <span class="s2">&quot;Docs/&quot;</span> <span class="n">tas</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span> <span class="n">apply</span> <span class="n">reader</span> <span class="s2">&quot;HW1/Questions&quot;</span> <span class="n">student_group1</span>
+<span class="linenos">14</span> <span class="n">apply</span> <span class="n">reader</span> <span class="s2">&quot;HW1/Solutions&quot;</span> <span class="n">students_group2</span>
+<span class="linenos">15</span>
+<span class="linenos">16</span> <span class="n">revoke</span> <span class="s2">&quot;Docs/Grades&quot;</span> <span class="n">tas</span>
+</pre></div>
+</div>
+<section id="data-types">
+<h2>Data Types<a class="headerlink" href="#data-types" title="Permalink to this headline"></a></h2>
+<p>There are 2 kinds of data types in gdauth, one for representing <code class="docutils literal notranslate"><span class="pre">paths</span></code> and another for representing <code class="docutils literal notranslate"><span class="pre">email-ids</span></code>. <code class="docutils literal notranslate"><span class="pre">paths</span></code> can either be file path or folder paths. They are enclosed by double quotes. All paths in a file are relative to the current directory of the file</p>
+</section>
+<section id="include-statements">
+<h2>Include statements<a class="headerlink" href="#include-statements" title="Permalink to this headline"></a></h2>
+<p><em>Syntax</em> : <code class="docutils literal notranslate"><span class="pre">include</span> <span class="pre">&quot;&lt;filepath&gt;&quot;</span></code></p>
+<p><em>Overview</em> : <code class="docutils literal notranslate"><span class="pre">include</span></code> keyword is used to indicate that a file must first be executed. The included files are considered to be present on the google drive relative to the path of current file. To prevent users with access to subfolders set permissions to files in the parent folder, the files are executed in a different environment. So every file can only add/remove permissions for files/folders in the current directory or its children.</p>
+<p><em>Example</em> : We see in line 1, that we are including <code class="docutils literal notranslate"><span class="pre">&quot;Project/auth.gd&quot;</span></code>. This indicates that the file mentioned is first loaded and executed before the continuation of the program.</p>
+</section>
+<section id="assignment-statements">
+<h2>Assignment statements<a class="headerlink" href="#assignment-statements" title="Permalink to this headline"></a></h2>
+<p><em>Syntax</em> :</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;var&gt;</span> <span class="pre">=</span> <span class="pre">&lt;var(path)&gt;|&lt;path&gt;</span> <span class="pre">{,</span> <span class="pre">&lt;var(path)&gt;|&lt;path&gt;}*</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;var&gt;</span> <span class="pre">=</span> <span class="pre">&lt;var(email-id)&gt;|&lt;email-id&gt;</span> <span class="pre">{,</span> <span class="pre">&lt;var(email-id)&gt;|&lt;email-id&gt;}*</span></code></p>
+<p><em>Overview</em> : An assignment statement is used to create a new variable of existing variables or primitive types. One or more primitives can be aggregated using commas. Note that aggregation of variables is possible on same variable types. A path cannot be aggregated with an email and this will throw an error.</p>
+<p><em>Example</em> : We see in line 3-6, there are assignments of types <code class="docutils literal notranslate"><span class="pre">paths</span></code> and <code class="docutils literal notranslate"><span class="pre">email-ids</span></code>. Two or more emails are gathered as groups. In line 4, we see that a variable can be combined with primitive type to create a new variable</p>
+</section>
+<section id="action-statements">
+<h2>Action statements<a class="headerlink" href="#action-statements" title="Permalink to this headline"></a></h2>
+<p>There are three action statements, which starts with keywords <code class="docutils literal notranslate"><span class="pre">apply</span></code>, <code class="docutils literal notranslate"><span class="pre">only</span></code> and <code class="docutils literal notranslate"><span class="pre">revoke</span></code>. The overview of each of them are below. <code class="docutils literal notranslate"><span class="pre">apply</span></code> and <code class="docutils literal notranslate"><span class="pre">revoke</span></code> both requires a <code class="docutils literal notranslate"><span class="pre">role</span></code> specified with it, which can be on of the following</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">owner</span></code> : Owns the file and is billed for the storage</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">writer</span></code> : Can write to file/folder</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">commenter</span></code> : Can comment on the file/folder</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">reader</span></code> : Can read the contents of the file</p></li>
+</ol>
+<section id="apply">
+<h3>apply<a class="headerlink" href="#apply" title="Permalink to this headline"></a></h3>
+<p><em>Syntax</em> : <code class="docutils literal notranslate"><span class="pre">apply</span> <span class="pre">&lt;role&gt;</span> <span class="pre">&lt;var(path)&gt;|&lt;path&gt;</span> <span class="pre">&lt;var(email-id)&gt;|&lt;email-id&gt;</span></code></p>
+<p><em>Overview</em> : This action makes sure that the role specified is given to the <code class="docutils literal notranslate"><span class="pre">paths</span></code> to the user/s in <code class="docutils literal notranslate"><span class="pre">email-id</span></code>. Note that variables can be aggregates</p>
+<p><em>Example</em> : In line 10 of the example, we see that <code class="docutils literal notranslate"><span class="pre">tas</span></code> get writer access to the <code class="docutils literal notranslate"><span class="pre">coursedocs</span></code></p>
+</section>
+<section id="only">
+<h3>only<a class="headerlink" href="#only" title="Permalink to this headline"></a></h3>
+<p><em>Syntax</em> : <code class="docutils literal notranslate"><span class="pre">only</span>&#160; <span class="pre">&lt;role&gt;</span> <span class="pre">&lt;var(path)&gt;|&lt;path&gt;</span> <span class="pre">&lt;var(email-id)&gt;|&lt;email-id&gt;</span></code></p>
+<p><em>Overview</em> : This action makes sure that only user/s of email-id  has the the role specified for the path. All the other user/s with the role are removed.</p>
+<p><em>Example</em> : In line 11, we see that only <code class="docutils literal notranslate"><span class="pre">tas</span></code> can be commenters, any other commenters are removed.</p>
+</section>
+<section id="revoke">
+<h3>revoke<a class="headerlink" href="#revoke" title="Permalink to this headline"></a></h3>
+<p><em>Syntax</em> : <code class="docutils literal notranslate"><span class="pre">revoke</span> <span class="pre">&lt;var(path)&gt;|&lt;path&gt;</span> <span class="pre">&lt;var(email-id)&gt;|&lt;email-id&gt;</span></code></p>
+<p><em>Overview</em> : This action removes the user/s from the path and they will have no access.</p>
+<p><em>Example</em> : Last line in the example removes tas from the path “Docs/Grades”</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to gdauth’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="cli.html" class="btn btn-neutral float-right" title="CLI Help" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Amogha&amp;Tino.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
