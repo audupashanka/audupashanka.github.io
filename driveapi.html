@@ -90,12 +90,87 @@
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="gdauth.driveapi.drive.downloadFile">
+<span class="sig-name descname"><span class="pre">downloadFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destpath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">currdirId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'root'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdauth.driveapi.drive.downloadFile" title="Permalink to this definition"></a></dt>
+<dd><p>This function will download a file from google drive to the path specified.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filepath</strong> (<em>str</em>) – the directory path of a file/folder.</p></li>
+<li><p><strong>destpath</strong> (<em>str</em>) – the destination folder path for the downloaded file.</p></li>
+<li><p><strong>currdirID</strong> (<em>str</em>) – Directory under which the search for the dirs begins.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gdauth.driveapi.drive.getAuthFilePaths">
+<span class="sig-name descname"><span class="pre">getAuthFilePaths</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">currDir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'root'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdauth.driveapi.drive.getAuthFilePaths" title="Permalink to this definition"></a></dt>
+<dd><p>This function will return the auth file paths from google drive.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>currdirID</strong> (<em>str</em>) – Directory under which the search for the dirs begins.</p></li>
+<li><p><strong>retVals</strong> (<em>list</em>) – the list of file paths of auth files in google drive.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="gdauth.driveapi.drive.list_permission">
 <span class="sig-name descname"><span class="pre">list_permission</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">currdirId</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdauth.driveapi.drive.list_permission" title="Permalink to this definition"></a></dt>
 <dd><p>This function will return list of permissions to a file/folder based on the id.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>fid</strong> (<em>str</em>) – file/folder id</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>currdirID</strong> (<em>str</em>) – Directory under which the search for the dirs begins.</p></li>
+<li><p><strong>filepath</strong> (<em>list</em>) – the directory path of a file/folder.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gdauth.driveapi.drive.make_owner">
+<span class="sig-name descname"><span class="pre">make_owner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">currdirId</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdauth.driveapi.drive.make_owner" title="Permalink to this definition"></a></dt>
+<dd><p>This function will make the given user a pending owner for a file/folder. Pending user has to accept ownership.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>currdirID</strong> (<em>str</em>) – Directory under which the search for the dirs begins.</p></li>
+<li><p><strong>filepath</strong> (<em>list</em>) – the directory path of a file/folder.</p></li>
+<li><p><strong>user</strong> (<em>list</em>) – email id of the new owner.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gdauth.driveapi.drive.only_permission">
+<span class="sig-name descname"><span class="pre">only_permission</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">role</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">currdirId</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dirs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">users</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdauth.driveapi.drive.only_permission" title="Permalink to this definition"></a></dt>
+<dd><p>This function will grant permission for the given role only to the given users for a file/folder.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>role</strong> (<em>str</em>) – type of permissions (reader/writer/editor).</p></li>
+<li><p><strong>currdirID</strong> (<em>str</em>) – Directory under which the search for the dirs begins.</p></li>
+<li><p><strong>dirs</strong> (<em>list</em>) – directory files .</p></li>
+<li><p><strong>users</strong> (<em>list</em>) – List of email ids on whom permission can be applied.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -114,6 +189,26 @@
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gdauth.driveapi.drive.uploadFile">
+<span class="sig-name descname"><span class="pre">uploadFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">srcpath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">currdirId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'root'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdauth.driveapi.drive.uploadFile" title="Permalink to this definition"></a></dt>
+<dd><p>This function will upload a file from the local machine to the google drive path specified.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>srcpath</strong> (<em>str</em>) – the source file path for the file to be uploaded.</p></li>
+<li><p><strong>filepath</strong> (<em>str</em>) – the directory path of a file/folder.</p></li>
+<li><p><strong>currdirID</strong> (<em>str</em>) – Directory under which the search for the dirs begins.</p></li>
+<li><p><strong>root</strong> (<em>str</em>) – the root directory name.</p></li>
+<li><p><strong>parent</strong> (<em>str</em>) – the parent directory name</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
 </dd>
 </dl>
 </dd></dl>
